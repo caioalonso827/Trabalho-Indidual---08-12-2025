@@ -19,5 +19,8 @@ public class UsuarioService {
         return usuarioRepository.loginUsuario(email, senha);
     } 
 
+    public Usuario buscarUsuario (Integer idUsuario) {
+        return usuarioRepository.findById(idUsuario).orElseThrow(()-> new RuntimeException("Não existe esse usuario"));
+    }
     
 }
